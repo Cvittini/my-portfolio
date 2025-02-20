@@ -8,7 +8,6 @@ export default function Navbar() {
   return (
     <nav className="nav">
       <div className="logo">
-       
         <div className="social-icons">
           <a
             className="button-icon"

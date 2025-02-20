@@ -1,0 +1,86 @@
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 2rem;
+  align-items: center;
+  
+}
+
+.skills-container {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+/* Make it responsive */
+@media (max-width: 768px) {
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.skills h1 {
+  font-size: 4rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.skills-list li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.skills-list li svg {
+  font-size: 2rem;
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: #333;
+}
+
+.skills .html-icon {
+  color: #e34c26;
+  font-size: 2rem;
+}
+
+.skills .css-icon {
+  color: #264de4;
+  font-size: 2rem;
+}
+
+.skills .js-icon {
+  color: #f0db4f;
+  font-size: 2rem;
+}
+
+.skills .react-icon {
+  color: #61dafb;
+  font-size: 2rem;
+}
+
+.skills .git-icon {
+  color: #f34f29;
+  font-size: 2rem;
+}
+
+.skills .github-icon {
+  color: #181717;
+  font-size: 2rem;
+}
+
+.skills .vscode-icon {
+  color: #007acc;
+  font-size: 2rem;
+}
+
+.skills .python-icon {
+  color: #306998;
+  font-size: 2rem;
+}

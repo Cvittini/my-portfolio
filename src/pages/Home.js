@@ -1,30 +1,46 @@
 import React from "react";
 import "./Home.css";
+import { FaArrowRight } from "react-icons/fa";
 
 export default function Home() {
-  return (
-    <div className="container">
-      <section className="home">
-        <h1>Web App Developer</h1>
-        <h2>Turning Ideas into Interactive Experiences</h2>
-        <p>
-          You know that feeling when a website just clicks—smooth, fast, and
-          effortlessly intuitive? That's what I build. I craft digital
-          experiences that aren't just functional, but fluid, responsive, and
-          engaging. Every pixel has a purpose, every animation tells a story,
-          and every interaction feels seamless.
-        </p>
-        <a href="/projects" className="cta-button">View My Work</a>
-        <a href="/contact" className="cta-button">Contact Me</a>
-      </section>
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    element?.scrollIntoView({ behavior: "smooth" });
+  };
 
-      <section className="approach">
-        <h1>My Approach</h1>
-        <ul>
-          <li><strong>Design with Purpose</strong> - UI that's clean, intuitive, and just makes sense.</li>
-          <li><strong>Code with Precision</strong> - Scalable, efficient, and optimized for performance.</li>
-          <li><strong>User First</strong> - Every project is crafted with the end-user in mind.</li>
-        </ul>
+  return (
+    <div className="home-container">
+      <section className="hero">
+        <div className="hero-content">
+          <h1 className="hero-title">
+            Hi, I'm <span className="highlight">Cristian Vittini</span>
+          </h1>
+          <h2 className="hero-subtitle">
+            Front-End Developer | Crafting Seamless Digital Experiences
+          </h2>
+          <p className="hero-text">
+            I'm passionate about building responsive and dynamic web
+            applications using technologies like HTML5, CSS3, JavaScript, and
+            React. My focus is on delivering high-quality code, intuitive user
+            interfaces, and bringing creative ideas to life through technology.
+          </p>
+          <div className="cta-container">
+            <button
+              className="cta-button primary"
+              onClick={() => scrollToSection("projects")}
+            >
+              View My Work
+              <FaArrowRight className="button-icon" />
+            </button>
+            <button
+              className="cta-button secondary"
+              onClick={() => scrollToSection("contact")}
+            >
+              Contact Me
+              <FaArrowRight className="button-icon" />
+            </button>
+          </div>
+        </div>
       </section>
     </div>
   );

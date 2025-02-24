@@ -11,6 +11,7 @@ export default function Home() {
   return (
     <div className="home-container">
       <section className="hero">
+        <img src="/E9DIZLCh2e7cFfbJ-generated_image.jpg" alt="Cristian Vittini" className="hero-image" />
         <div className="hero-content">
           <h1 className="hero-title">
             Hi, I'm <span className="highlight">Cristian Vittini</span>

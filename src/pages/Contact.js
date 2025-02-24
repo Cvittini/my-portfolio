@@ -1,35 +1,33 @@
-import React, { useState } from 'react';
-import './Contact.css';
+import React, { useState } from "react";
+import "./Contact.css";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
 
-  const [status, setStatus] = useState('');
+  const [status, setStatus] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
+    setFormData((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setStatus('Sending...');
-    
-    // Here you would typically send the data to your backend
-    // For now, we'll just simulate a submission
+    setStatus("Sending...");
+
     setTimeout(() => {
-      setStatus('Message sent successfully!');
+      setStatus("Message sent successfully!");
       setFormData({
-        name: '',
-        email: '',
-        message: ''
+        name: "",
+        email: "",
+        message: "",
       });
     }, 1000);
   };

@@ -4,10 +4,10 @@
   flex-direction: column;
   padding: 2rem;
   align-items: center;
-  
 }
 
 .skills-container {
+  height: 60vh;
   padding: 2rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -22,7 +22,8 @@
 }
 
 .skills h1 {
-  font-size: 4rem;
+  line-height: 0.10;
+  font-size: 3rem;
   font-weight: 600;
   margin-bottom: 2rem;
 }

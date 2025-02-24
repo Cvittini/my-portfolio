@@ -24,7 +24,7 @@ function App() {
     };
 
     sectionRefs[section]?.current?.scrollIntoView({ behavior: "smooth" });
-   };
+  };
 
   return (
     <div className="app">

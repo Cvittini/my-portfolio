@@ -3,7 +3,7 @@ import "./About.css";
 
 export default function About() {
   return (
-    <div className="about-container">
+    <div className="about-container" id="about">
       <h1>About Me</h1>
       <p>
         Hi, I'm <strong>Cristian A. Vittini Hernandez</strong>, a dedicated and creative front-end developer with a strong foundation in HTML, CSS, JavaScript, and React. I'm currently pivoting from the trucking industry to pursue my passion for web development.

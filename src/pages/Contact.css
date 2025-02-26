@@ -2,12 +2,13 @@
   max-width: 600px;
   margin: 0 auto;
   padding: 2rem;
+  text-align: center; /* Centered text for consistency */
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.2rem; /* Slightly reduced gap */
 }
 
 .form-group {
@@ -19,30 +20,38 @@
 label {
   font-weight: 500;
   color: #333;
+  font-size: clamp(0.9rem, 2vw, 1rem); /* Responsive label size */
 }
 
-input, textarea {
+input,
+textarea {
   padding: 0.8rem;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2vw, 1rem); /* Responsive input size */
+  width: 100%; /* Ensure full width */
+  box-sizing: border-box; /* Include padding in width */
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   outline: none;
   border-color: #007bff;
-  box-shadow: 0 0 0 2px rgba(0,123,255,0.2);
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
 }
 
 button {
-  padding: 1rem 2rem;
+  padding: 0.8rem 1.5rem; /* Slightly smaller padding */
   background-color: #007bff;
   color: white;
   border: none;
   border-radius: 4px;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2vw, 1rem); /* Responsive button text */
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: 100%; /* Full width on smaller screens */
+  max-width: 250px; /* Cap width for larger screens */
+  margin: 0 auto; /* Center the button */
 }
 
 button:hover {
@@ -54,11 +63,61 @@ button:hover {
   margin-top: 1rem;
   padding: 0.5rem;
   border-radius: 4px;
+  font-size: clamp(0.85rem, 1.8vw, 1rem); /* Responsive status text */
 }
 
-/* Responsive design */
+/* Tablet Adjustments */
 @media (max-width: 768px) {
+  .contact-container {
+    padding: 1.5rem;
+    max-width: 100%; /* Full width on tablets */
+  }
+
+  .contact-form {
+    gap: 1rem;
+  }
+
+  input,
+  textarea {
+    padding: 0.7rem;
+  }
+
+  button {
+    padding: 0.7rem 1.2rem;
+  }
+}
+
+/* Phone-Specific Adjustments */
+@media (max-width: 480px) {
   .contact-container {
     padding: 1rem;
   }
-} 
+
+  .contact-form {
+    gap: 0.8rem;
+  }
+
+  label {
+    font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+  }
+
+  input,
+  textarea {
+    padding: 0.6rem;
+    font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+  }
+
+  textarea {
+    rows: 4; /* Slightly fewer rows on phones */
+  }
+
+  button {
+    padding: 0.6rem 1rem;
+    font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+  }
+
+  .status-message {
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    margin-top: 0.8rem;
+  }
+}

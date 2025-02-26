@@ -1,87 +1,139 @@
 .skills {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   padding: 2rem;
   align-items: center;
 }
 
 .skills-container {
-  height: 60vh;
-  padding: 2rem;
+  height: auto; /* Changed from fixed height to adapt to content */
+  padding: 1.5rem; /* Slightly reduced padding */
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  gap: 1.5rem; /* Slightly reduced gap */
 }
 
-/* Make it responsive */
-@media (max-width: 768px) {
-  .skills-container {
-    grid-template-columns: 1fr;
-  }
-}
-
+/* Skills Heading */
 .skills h1 {
-  line-height: 0.10;
-  font-size: 3rem;
+  line-height: 1.2; /* Adjusted for better readability */
+  font-size: clamp(2rem, 6vw, 3rem); /* Responsive font size */
   font-weight: 600;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
-.skills-list li {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-}
-
-.skills-list li svg {
-  font-size: 2rem;
-}
-
+/* Skills Section Heading */
 h2 {
-  margin-bottom: 1.5rem;
-  font-size: 2rem;
+  margin-bottom: 1.2rem; /* Slightly reduced */
+  font-size: clamp(1.5rem, 4vw, 2rem); /* Responsive size */
   color: #333;
 }
 
+/* Skills List */
+.skills-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem; /* Slightly reduced gap */
+  margin-bottom: 0.8rem; /* Slightly reduced */
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem); /* Responsive font size */
+}
+
+.skills-list li svg {
+  font-size: clamp(1.5rem, 3vw, 2rem); /* Responsive icon size */
+}
+
+/* Icon Colors */
 .skills .html-icon {
   color: #e34c26;
-  font-size: 2rem;
 }
 
 .skills .css-icon {
   color: #264de4;
-  font-size: 2rem;
 }
 
 .skills .js-icon {
   color: #f0db4f;
-  font-size: 2rem;
 }
 
 .skills .react-icon {
   color: #61dafb;
-  font-size: 2rem;
 }
 
 .skills .git-icon {
   color: #f34f29;
-  font-size: 2rem;
 }
 
 .skills .github-icon {
   color: #181717;
-  font-size: 2rem;
 }
 
 .skills .vscode-icon {
   color: #007acc;
-  font-size: 2rem;
 }
 
 .skills .python-icon {
   color: #306998;
-  font-size: 2rem;
+}
+
+/* Responsive Design */
+
+/* Tablet Adjustments */
+@media (max-width: 768px) {
+  .skills-container {
+    grid-template-columns: 1fr; /* Single column */
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .skills {
+    padding: 1.5rem;
+  }
+
+  .skills h1 {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+  }
+
+  h2 {
+    font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+  }
+
+  .skills-list li {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+  }
+
+  .skills-list li svg {
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  }
+}
+
+/* Phone-Specific Adjustments */
+@media (max-width: 480px) {
+  .skills {
+    padding: 1rem; /* Further reduced padding */
+  }
+
+  .skills-container {
+    padding: 0.75rem;
+    gap: 0.8rem;
+  }
+
+  .skills h1 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    margin-bottom: 1rem;
+  }
+
+  .skills-list li {
+    font-size: clamp(0.9rem, 1.8vw, 1.2rem);
+    gap: 0.6rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .skills-list li svg {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+  }
 }

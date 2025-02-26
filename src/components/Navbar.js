@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import "./navbar.css";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaBars } from "react-icons/fa"; // Added FaBars for hamburger
 import { SiGmail } from "react-icons/si";
 
 function Navbar({ scrollToSection }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <nav className="navbar">
-      <div className="nav-links">
+      <button className="hamburger" onClick={toggleMenu}>
+        <FaBars />
+      </button>
+      <div className={`nav-links ${isMenuOpen ? "active" : ""}`}>
         <button onClick={() => scrollToSection("home")} className="nav-link">
           Home
         </button>
@@ -16,10 +25,7 @@ function Navbar({ scrollToSection }) {
         <button onClick={() => scrollToSection("skills")} className="nav-link">
           Skills
         </button>
-        <button
-          onClick={() => scrollToSection("projects")}
-          className="nav-link"
-        >
+        <button onClick={() => scrollToSection("projects")} className="nav-link">
           Projects
         </button>
         <button onClick={() => scrollToSection("contact")} className="nav-link">

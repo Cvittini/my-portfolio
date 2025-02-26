@@ -6,17 +6,17 @@
 }
 
 h1 {
-  font-size: clamp(3.2rem, 7vw, 4rem);
-  margin-bottom: 2.5rem;
+  font-size: clamp(2rem, 7vw, 4rem); /* Adjusted min size for phones */
+  margin-bottom: 2rem; /* Slightly reduced */
   color: #333;
   animation: fadeIn 1s ease-out;
 }
 
 p {
-  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  font-size: clamp(1rem, 2.5vw, 1.8rem); /* Smaller min size for phones */
   line-height: 1.8;
   color: #555;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem; /* Slightly reduced */
   animation: fadeIn 1s ease-out 0.2s backwards;
   max-width: 900px;
   margin-left: auto;
@@ -25,7 +25,7 @@ p {
 
 strong {
   color: #007bff;
-  font-size: 1.9rem;
+  font-size: clamp(1.2rem, 2.5vw, 1.9rem); /* Responsive strong text */
 }
 
 @keyframes fadeIn {
@@ -39,16 +39,44 @@ strong {
   }
 }
 
+/* Tablet Adjustments */
 @media (max-width: 768px) {
   .about-container {
     padding: 3rem 1rem;
   }
 
   h1 {
-    font-size: 2.8rem;
+    font-size: clamp(1.8rem, 6vw, 2.8rem); /* Refined for tablets */
   }
 
   p {
-    font-size: 1.3rem;
+    font-size: clamp(0.95rem, 2vw, 1.3rem);
+  }
+
+  strong {
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+  }
+}
+
+/* Phone-Specific Adjustments */
+@media (max-width: 480px) {
+  .about-container {
+    padding: 2rem 0.75rem; /* Further reduced padding */
+  }
+
+  h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem); /* Smaller for phones */
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    font-size: clamp(0.85rem, 1.8vw, 1.1rem); /* Even smaller for readability */
+    line-height: 1.6; /* Slightly tighter line height */
+    margin-bottom: 1.5rem;
+    max-width: 100%; /* Full width on phones */
+  }
+
+  strong {
+    font-size: clamp(1rem, 1.8vw, 1.3rem);
   }
 }

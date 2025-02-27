@@ -114,7 +114,8 @@ li {
 }
 
 .hero-image {
-  width: 70%; /* Slightly larger relative size on phones */
+  max-width: 1200px;
+  width: 50%; /* Slightly larger relative size on phones */
   height: auto; /* Maintain aspect ratio */
   object-fit: cover;
   border-radius: 50%;

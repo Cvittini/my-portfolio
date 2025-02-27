@@ -1,68 +1,14 @@
+/* Base Container */
 .container {
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px; /* Reduced padding for smaller screens */
-  max-width: 900px;
-  margin: auto;
+  padding: 20px;
+  max-width: 1200px; /* Increased max-width for larger screens */
+  margin: 0 auto;
   text-align: center;
-}
-
-h1 {
-  font-size: 2rem; /* Slightly smaller base size for phones */
-  margin-bottom: 10px;
-  animation: fadeIn 1s ease-in-out;
-}
-
-h2 {
-  font-size: 1.25rem; /* Adjusted for smaller screens */
-  color: #555;
-  margin-bottom: 15px;
-}
-
-p {
-  font-size: 1rem; /* Smaller base font size */
-  line-height: 1.6;
-  color: #333;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  font-size: 1rem;
-  margin-bottom: 10px;
-}
-
-.cta-button {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 18px; /* Slightly smaller padding */
-  font-size: 1rem;
-  color: white;
-  background: #007bff;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background 0.3s;
-}
-
-.cta-button:hover {
-  background: #0056b3;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* Hero Section */
@@ -74,22 +20,24 @@ li {
 .hero {
   min-height: 80vh;
   display: flex;
-  flex-direction: column; /* Stack items vertically on phones */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1rem; /* Reduced padding */
+  padding: 1rem;
 }
 
+/* Hero Content */
 .hero-content {
-  max-width: 100%; /* Full width on smaller screens */
+  max-width: 100%;
   text-align: center;
   animation: fadeIn 1s ease-out;
 }
 
 .hero-title {
-  font-size: clamp(1.5rem, 6vw, 4.5rem); /* Adjusted min size for phones */
-  margin-bottom: 1rem;
-  line-height: 1.2;
+  font-size: clamp(1.5rem, 5vw, 3.5rem); /* Reduced max size for compactness */
+  margin-bottom: 0.75rem; /* Tighter spacing */
+  line-height: 1.1; /* Tighter line height */
+  font-weight: 700;
 }
 
 .highlight {
@@ -98,35 +46,37 @@ li {
 }
 
 .hero-subtitle {
-  font-size: clamp(1rem, 3vw, 2rem); /* Adjusted for phones */
+  font-size: clamp(1rem, 2.5vw, 1.5rem); /* Smaller max size */
   color: #666;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem; /* Reduced spacing */
   animation: fadeIn 1s ease-out 0.2s backwards;
+  font-weight: 500;
 }
 
 .hero-text {
-  font-size: clamp(0.9rem, 2vw, 1.2rem); /* Slightly smaller on phones */
-  line-height: 1.6;
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem); /* Smaller max size */
+  line-height: 1.5; /* Tighter line height */
   color: #444;
-  max-width: 100%; /* Full width */
-  margin: 0 auto 1.5rem; /* Reduced bottom margin */
+  max-width: 600px; /* Constrain width for readability */
+  margin: 0 auto 1rem; /* Reduced bottom margin */
   animation: fadeIn 1s ease-out 0.4s backwards;
 }
 
+/* Hero Image */
 .hero-image {
-  max-width: 1200px;
-  width: 50%; /* Slightly larger relative size on phones */
-  height: auto; /* Maintain aspect ratio */
+  width: 70%; /* Slightly smaller on big screens */
+  height: auto;
   object-fit: cover;
   border-radius: 50%;
-  margin-bottom: 1.5rem; /* Space below image */
+  margin-bottom: 1rem; /* Reduced spacing */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 /* CTA Buttons */
 .cta-container {
   display: flex;
-  flex-direction: column; /* Stack buttons vertically on phones */
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0.75rem; /* Tighter gap */
   justify-content: center;
   animation: fadeIn 1s ease-out 0.6s backwards;
 }
@@ -134,16 +84,16 @@ li {
 .cta-button {
   display: flex;
   align-items: center;
-  justify-content: center; /* Center icon and text */
+  justify-content: center;
   gap: 0.5rem;
-  padding: 0.8rem 1.5rem; /* Adjusted padding */
+  padding: 0.7rem 1.2rem; /* Smaller padding */
   font-size: 1rem;
-  border-radius: 50px;
+  border-radius: 25px; /* Softer radius */
   text-decoration: none;
   transition: all 0.3s ease;
-  font-weight: 500;
-  width: 100%; /* Full width on phones */
-  max-width: 250px; /* Limit max width */
+  font-weight: 600;
+  width: 100%;
+  max-width: 200px; /* Smaller max width */
 }
 
 .cta-button.primary {
@@ -159,7 +109,7 @@ li {
 }
 
 .cta-button:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px); /* Subtler hover effect */
   box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
 }
 
@@ -168,66 +118,88 @@ li {
 }
 
 .cta-button:hover .button-icon {
-  transform: translateX(5px);
+  transform: translateX(4px); /* Slightly smaller movement */
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px); /* Smaller initial offset */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet and Larger Adjustments (Big Screens) */
+@media (min-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two-column layout */
+    gap: 2rem; /* Reduced gap */
+    padding: 2rem;
+    text-align: left;
+  }
+
+  .hero {
+    flex-direction: row;
+    padding: 2rem;
+    align-items: center;
+    gap: 2rem; /* Space between image and content */
+  }
+
+  .hero-content {
+    max-width: 500px; /* Constrain content width */
+  }
+
+  .hero-image {
+    width: 45%; /* Slightly smaller for balance */
+    max-width: 500px; /* Cap image size */
+    margin-bottom: 0; /* No bottom margin in row layout */
+  }
+
+  .cta-container {
+    flex-direction: row; /* Horizontal buttons */
+    gap: 1rem;
+  }
+
+  .cta-button {
+    width: auto; /* Reset width */
+    padding: 0.8rem 1.5rem; /* Slightly larger on big screens */
+  }
 }
 
 /* Phone-Specific Adjustments */
-@media (max-width: 480px) { /* Targeting phone screens */
+@media (max-width: 480px) {
   .container {
     padding: 15px;
   }
 
   .hero {
-    min-height: auto; /* Allow content to dictate height */
+    min-height: auto;
     padding: 1rem;
   }
 
   .hero-title {
-    font-size: clamp(1.25rem, 5vw, 3rem); /* Even smaller min size */
+    font-size: clamp(1.25rem, 5vw, 2.5rem);
   }
 
   .hero-subtitle {
-    font-size: clamp(0.9rem, 2.5vw, 1.5rem);
+    font-size: clamp(0.9rem, 2.5vw, 1.3rem);
   }
 
   .hero-text {
-    font-size: 0.85rem; /* Slightly smaller text */
+    font-size: 0.85rem;
   }
 
   .hero-image {
-    width: 60%; /* Adjust for smaller screens */
+    width: 60%;
   }
 
   .cta-button {
-    padding: 0.7rem 1.2rem; /* Smaller buttons */
+    padding: 0.6rem 1rem;
     font-size: 0.9rem;
-  }
-}
-
-/* Tablet and Larger Adjustments */
-@media (min-width: 768px) {
-  .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    text-align: left;
-  }
-
-  .hero {
-    flex-direction: row; /* Back to row for larger screens */
-    padding: 2rem;
-  }
-
-  .hero-image {
-    width: 50%;
-  }
-
-  .cta-container {
-    flex-direction: row; /* Horizontal buttons on larger screens */
-    gap: 1.5rem;
-  }
-
-  .cta-button {
-    width: auto; /* Reset width for larger screens */
   }
 }

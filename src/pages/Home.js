@@ -2,16 +2,16 @@ import React from "react";
 import "./Home.css";
 import { FaArrowRight } from "react-icons/fa";
 
-export default function Home() {
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    element?.scrollIntoView({ behavior: "smooth" });
-  };
-
+export default function Home({ scrollToSection }) {
   return (
     <div className="home-container">
       <section className="hero">
-        <img src="/E9DIZLCh2e7cFfbJ-generated_image.jpg" alt="Cristian Vittini" className="hero-image" />
+        <img
+          src="/E9DIZLCh2e7cFfbJ-generated_image.jpg"
+          alt="Cristian Vittini"
+          className="hero-image"
+          onError={(e) => (e.target.src = "/fallback-image.jpg")} // Optional fallback
+        />
         <div className="hero-content">
           <h1 className="hero-title">
             Hi, I'm <span className="highlight">Cristian Vittini</span>
@@ -20,10 +20,9 @@ export default function Home() {
             Front-End Developer | Crafting Seamless Digital Experiences
           </h2>
           <p className="hero-text">
-            I'm passionate about building responsive and dynamic web
-            applications using technologies like HTML5, CSS3, JavaScript, and
-            React. My focus is on delivering high-quality code, intuitive user
-            interfaces, and bringing creative ideas to life through technology.
+            I'm passionate about building responsive, dynamic web applications
+            with HTML5, CSS3, JavaScript, and React, delivering high-quality
+            code and intuitive user interfaces.
           </p>
           <div className="cta-container">
             <button

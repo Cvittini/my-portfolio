@@ -1,9 +1,9 @@
 import React from "react";
-import "./Footer.css";
+import "./Footer.css"
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 
-export default function Footer() {
+function Footer() {
   return (
     <footer className="footer">
       <div className="footer-content">
@@ -41,3 +41,5 @@ export default function Footer() {
     </footer>
   );
 }
+
+export default Footer;

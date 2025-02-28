@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./navbar.css";
-import { FaGithub, FaLinkedin, FaBars } from "react-icons/fa"; // Added FaBars for hamburger
+import { FaGithub, FaLinkedin, FaBars, FaFileDownload } from "react-icons/fa"; // Added FaFileDownload
 import { SiGmail } from "react-icons/si";
 
 function Navbar({ scrollToSection }) {
@@ -39,6 +39,7 @@ function Navbar({ scrollToSection }) {
           target="_blank"
           rel="noopener noreferrer"
           className="button-icon"
+          title="GitHub"
         >
           <FaGithub />
         </a>
@@ -47,6 +48,7 @@ function Navbar({ scrollToSection }) {
           target="_blank"
           rel="noopener noreferrer"
           className="button-icon"
+          title="LinkedIn"
         >
           <FaLinkedin />
         </a>
@@ -55,8 +57,17 @@ function Navbar({ scrollToSection }) {
           target="_blank"
           rel="noopener noreferrer"
           className="button-icon"
+          title="Gmail"
         >
           <SiGmail />
+        </a>
+        <a
+          href="/resume.pdf" // Replace with the actual path to your resume file
+          download="Cristian_Vittini_Resume.pdf" // Suggested filename for download
+          className="button-icon resume-icon"
+          title="Download Resume" // Tooltip for accessibility
+        >
+          <FaFileDownload />
         </a>
       </div>
     </nav>

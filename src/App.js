@@ -6,7 +6,6 @@ import About from "./pages/About";
 import Skills from "./pages/Skills";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
-
 import "./App.css";
 
 function App() {
@@ -31,10 +30,9 @@ function App() {
   return (
     <div className="app">
       <Navbar scrollToSection={scrollToSection} />
-
       <main>
         <section ref={homeRef} id="home" className="section">
-          <Home />
+          <Home scrollToSection={scrollToSection} /> {/* Pass prop here */}
         </section>
 
         <section ref={aboutRef} id="about" className="section">

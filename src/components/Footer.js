@@ -35,7 +35,7 @@ export default function Footer() {
           </a>
         </div>
         <p className="rights">
-          © {new Date().getFullYear()} Cristian Vittini. All rights reserved.
+          © {new Date().getFullYear()} Cristian Vittini.  All rights reserved.
         </p>
       </div>
     </footer>

@@ -1,9 +1,9 @@
 import React from "react";
-import "./footer.css"
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import "./footer.css";
+import { FaGithub, FaLinkedin, FaHome } from "react-icons/fa"; // Added FaHome
 import { SiGmail } from "react-icons/si";
 
-function Footer() {
+function Footer({ scrollToSection }) { // Accept scrollToSection prop
   return (
     <footer className="footer">
       <div className="footer-content">
@@ -20,8 +20,7 @@ function Footer() {
             href="https://www.linkedin.com/in/cristian-vittini-9523a4154/"
             target="_blank"
             rel="noopener noreferrer"
-
-          title="LinkedIn"
+            title="LinkedIn"
           >
             <FaLinkedin />
           </a>
@@ -35,8 +34,15 @@ function Footer() {
           </a>
         </div>
         <p className="rights">
-          © {new Date().getFullYear()} Cristian Vittini.  All rights reserved.
+          © {new Date().getFullYear()} Cristian Vittini. All rights reserved.
         </p>
+        <button
+          className="home-button"
+          onClick={() => scrollToSection("home")}
+          title="Back to Home"
+        >
+          <FaHome />
+        </button>
       </div>
     </footer>
   );

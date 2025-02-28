@@ -52,6 +52,7 @@
 .social-links {
   display: flex;
   gap: 1rem;
+  padding-right: 1.5rem;
   align-items: center;
 }
 
@@ -107,7 +108,7 @@
   }
 
   .nav-link {
-    padding: 0.4rem 0.8rem;
+    padding: 0.8rem 0.8rem;
     font-size: 0.9rem;
   }
 

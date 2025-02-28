@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./navbar.css";
-import { FaGithub, FaLinkedin, FaBars, FaFileDownload } from "react-icons/fa"; // Added FaFileDownload
+import { FaGithub, FaLinkedin, FaBars, FaFileDownload } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 
 function Navbar({ scrollToSection }) {
@@ -10,25 +10,30 @@ function Navbar({ scrollToSection }) {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleNavClick = (section) => {
+    scrollToSection(section); // Scroll to section
+    if (isMenuOpen) toggleMenu(); // Close menu if open (mobile)
+  };
+
   return (
     <nav className="navbar">
       <button className="hamburger" onClick={toggleMenu}>
         <FaBars />
       </button>
       <div className={`nav-links ${isMenuOpen ? "active" : ""}`}>
-        <button onClick={() => scrollToSection("home")} className="nav-link">
+        <button onClick={() => handleNavClick("home")} className="nav-link">
           Home
         </button>
-        <button onClick={() => scrollToSection("about")} className="nav-link">
+        <button onClick={() => handleNavClick("about")} className="nav-link">
           About
         </button>
-        <button onClick={() => scrollToSection("skills")} className="nav-link">
+        <button onClick={() => handleNavClick("skills")} className="nav-link">
           Skills
         </button>
-        <button onClick={() => scrollToSection("projects")} className="nav-link">
+        <button onClick={() => handleNavClick("projects")} className="nav-link">
           Projects
         </button>
-        <button onClick={() => scrollToSection("contact")} className="nav-link">
+        <button onClick={() => handleNavClick("contact")} className="nav-link">
           Contact
         </button>
       </div>
@@ -62,10 +67,10 @@ function Navbar({ scrollToSection }) {
           <SiGmail />
         </a>
         <a
-          href="/resume.pdf" // Replace with the actual path to your resume file
-          download="Cristian_Vittini_Resume.pdf" // Suggested filename for download
+          href="/resume.pdf"
+          download="Cristian_Vittini_Resume.pdf"
           className="button-icon resume-icon"
-          title="Download Resume" // Tooltip for accessibility
+          title="Download Resume"
         >
           <FaFileDownload />
         </a>

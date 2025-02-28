@@ -32,26 +32,22 @@ function App() {
       <Navbar scrollToSection={scrollToSection} />
       <main>
         <section ref={homeRef} id="home" className="section">
-          <Home scrollToSection={scrollToSection} /> {/* Pass prop here */}
+          <Home scrollToSection={scrollToSection} />
         </section>
-
         <section ref={aboutRef} id="about" className="section">
           <About />
         </section>
-
         <section ref={skillsRef} id="skills" className="section">
           <Skills />
         </section>
-
         <section ref={projectsRef} id="projects" className="section">
           <Projects />
         </section>
-
         <section ref={contactRef} id="contact" className="section">
           <Contact />
         </section>
       </main>
-      <Footer />
+      <Footer scrollToSection={scrollToSection} /> {/* Pass prop here */}
     </div>
   );
 }

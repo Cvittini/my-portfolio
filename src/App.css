@@ -1,35 +1,44 @@
-
 body {
-  font-family: 'Inter', 'Arial', sans-serif;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  color: #333;
+  font-family: "Inter", "Arial", sans-serif;
+  background: rgb(33, 33, 33);
+  color: #ffffff;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-h1, h2, p, li, button, label, input, textarea {
-  font-family: 'Inter', 'Arial', sans-serif;
-  color: #333;
+h1,
+h2,
+p,
+li,
+button,
+label,
+input,
+textarea {
+  font-family: "Inter", "Arial", sans-serif;
+  color: rgb(255, 255, 255);
 }
 
 h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
 }
 
 h2 {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
 
-p, li, label, input, textarea {
-    font-size: 1.2rem;
-    line-height: 1.6;
+p,
+li,
+label,
+input,
+textarea {
+  font-size: 1.2rem;
+  line-height: 1.6;
 }
-
 
 html {
   scroll-behavior: smooth;
@@ -46,7 +55,7 @@ body {
 }
 
 main {
-  padding-top: 60px; /* Adjust based on your navbar height */
+  padding-top: 60px;
 }
 
 .section {
@@ -59,7 +68,6 @@ main {
   animation: fadeIn 0.6s ease-out;
 }
 
-/* Animation for sections */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -71,7 +79,6 @@ main {
   }
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
   .section {
     padding: 1rem;

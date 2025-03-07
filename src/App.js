@@ -47,7 +47,7 @@ function App() {
           <Contact />
         </section>
       </main>
-      <Footer scrollToSection={scrollToSection} /> {/* Pass prop here */}
+      <Footer scrollToSection={scrollToSection} /> 
     </div>
   );
 }

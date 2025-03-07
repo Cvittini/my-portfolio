@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from "emailjs-com";
 import "./Contact.css";
 
 export default function Contact() {
@@ -29,23 +30,43 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!validateForm() || formData.honeypot) return; // Honeypot check
+    if (!validateForm() || formData.honeypot) return;
     setIsSending(true);
     setStatus("sending");
 
-    setTimeout(() => {
-      setStatus("success");
-      setFormData({ name: "", email: "", message: "", honeypot: "" });
-      setIsSending(false);
-      setErrors({});
-      setTimeout(() => setStatus(""), 3000);
-    }, 1000);
+    emailjs
+      .send(
+        "service_4od54cr",
+        "template_lbtk24d",
+        formData,
+        "eJQJsgtSu0xc7L8Kx"
+      )
+      .then(
+        () => {
+          setStatus("success");
+          setFormData({ name: "", email: "", message: "", honeypot: "" });
+          setErrors({});
+          setTimeout(() => {
+            setStatus("");
+            setIsSending(false);
+          }, 3000);
+        },
+        (error) => {
+          setStatus("error");
+          setIsSending(false);
+          console.error("EmailJS error:", error);
+        }
+      );
   };
 
   return (
     <div className="contact-container" id="contact">
-      <h1 className="contact-title">Contact Me</h1>
-      <form onSubmit={handleSubmit} className="contact-form" aria-label="Contact form">
+      <h1 className="contact-title">Get in Touch</h1>
+      <form
+        onSubmit={handleSubmit}
+        className="contact-form"
+        aria-label="Contact form"
+      >
         <div className="form-group">
           <label htmlFor="name">Name</label>
           <input
@@ -56,6 +77,8 @@ export default function Contact() {
             onChange={handleChange}
             required
             aria-required="true"
+            className={errors.name ? "input-error" : ""}
+            placeholder="Your name"
           />
           {errors.name && <span className="error">{errors.name}</span>}
         </div>
@@ -69,6 +92,8 @@ export default function Contact() {
             onChange={handleChange}
             required
             aria-required="true"
+            className={errors.email ? "input-error" : ""}
+            placeholder="Your email"
           />
           {errors.email && <span className="error">{errors.email}</span>}
         </div>
@@ -82,22 +107,39 @@ export default function Contact() {
             required
             rows="5"
             aria-required="true"
+            className={errors.message ? "input-error" : ""}
+            placeholder="Your message"
           />
           {errors.message && <span className="error">{errors.message}</span>}
         </div>
         <div className="form-group honeypot" style={{ display: "none" }}>
-          <input type="text" name="honeypot" value={formData.honeypot} onChange={handleChange} />
+          <input
+            type="text"
+            name="honeypot"
+            value={formData.honeypot}
+            onChange={handleChange}
+          />
         </div>
-        <button type="submit" disabled={isSending}>
+        <button type="submit" disabled={isSending} className="submit-button">
           {isSending ? "Sending..." : "Send Message"}
         </button>
         {status && (
           <p
-            className={`status-message ${status === "success" ? "success" : status === "sending" ? "sending" : ""}`}
+            className={`status-message ${
+              status === "success"
+                ? "success"
+                : status === "sending"
+                ? "sending"
+                : "error"
+            }`}
             role="alert"
             aria-live="polite"
           >
-            {status === "sending" ? "Sending..." : "Message sent successfully!"}
+            {status === "sending"
+              ? "Sending..."
+              : status === "success"
+              ? "Message sent!"
+              : "Failed to send. Try again."}
           </p>
         )}
       </form>

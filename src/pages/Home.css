@@ -1,6 +1,4 @@
-/* Base Container */
 .container {
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,7 +9,6 @@
   text-align: center;
 }
 
-/* Hero Section */
 .home-container {
   min-height: 100vh;
   overflow: hidden;
@@ -26,59 +23,56 @@
   padding: 1rem;
 }
 
-/* Hero Content */
 .hero-content {
   max-width: 100%;
   text-align: center;
-  animation: slideIn 0.8s ease-out; /* Sharper animation */
+  animation: slideIn 0.8s ease-out;
 }
 
 .hero-title {
-  font-size: clamp(1.5rem, 5vw, 3rem); /* Slightly smaller max */
-  margin-bottom: 0.5rem; /* Tighter spacing */
+  font-size: clamp(4rem, 5vw, 3rem);
+  margin-bottom: 0.5rem;
   line-height: 1;
-  font-weight: 800; /* Bolder for impact */
-  letter-spacing: -0.02em; /* Tight kerning */
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 .highlight {
   color: #007bff;
-  font-weight: 900; /* Extra emphasis */
+  font-weight: 900;
 }
 
 .hero-subtitle {
-  font-size: clamp(1rem, 2vw, 1.25rem); /* Smaller, precise */
-  color: #333; /* Darker for authority */
+  font-size: clamp(2.5rem, 2vw, 1.25rem);
+  color: #ffffff;
   margin-bottom: 0.75rem;
   font-weight: 600;
-  text-transform: uppercase; /* Sharp, confident style */
+  text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .hero-text {
-  font-size: clamp(0.9rem, 1.5vw, 1rem); /* Tighter text */
+  font-size: clamp(1.4rem, 1.5vw, 1rem);
   line-height: 1.4;
-  color: #444;
-  max-width: 500px; /* Narrower for focus */
+  color: #ffffff;
+  max-width: 500px;
   margin: 0 auto 1rem;
-  font-weight: 400; /* Clean, no fluff */
+  font-weight: 400;
 }
 
-/* Hero Image */
 .hero-image {
-  width: 35%; /* Compact yet prominent */
+  width: 35%;
   height: auto;
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 1rem;
-  border: 2px solid #007bff; /* Precise outline */
+  border: 2px solid #007bff;
 }
 
-/* CTA Buttons */
 .cta-container {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem; /* Tighter gap */
+  gap: 0.5rem;
   justify-content: center;
 }
 
@@ -87,20 +81,20 @@
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
-  padding: 0.6rem 1.2rem; /* Compact padding */
-  font-size: 0.95rem; /* Precise text */
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
   border-radius: 20px;
   text-decoration: none;
-  transition: all 0.2s ease; /* Faster transition */
-  font-weight: 700; /* Bold, confident */
-  text-transform: uppercase; /* Sharp call-to-action */
+  transition: all 0.2s ease;
+  font-weight: 700;
+  text-transform: uppercase;
   letter-spacing: 0.03em;
 }
 
 .cta-button.primary {
   background: #007bff;
   color: white;
-  box-shadow: 0 2px 10px rgba(0, 123, 255, 0.3); /* Subtler shadow */
+  box-shadow: 0 2px 10px rgba(0, 123, 255, 0.3);
 }
 
 .cta-button.secondary {
@@ -110,7 +104,7 @@
 }
 
 .cta-button:hover {
-  transform: scale(1.05); /* Subtle scale instead of lift */
+  transform: scale(1.05);
   box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
 }
 
@@ -120,10 +114,9 @@
 }
 
 .cta-button:hover .button-icon {
-  transform: translateX(3px); /* Smaller shift */
+  transform: translateX(3px);
 }
 
-/* Animation */
 @keyframes slideIn {
   from {
     opacity: 0;
@@ -135,7 +128,6 @@
   }
 }
 
-/* Big Screens */
 @media (min-width: 768px) {
   .container {
     display: grid;
@@ -153,7 +145,7 @@
   }
 
   .hero-content {
-    max-width: 450px; /* Tighter content block */
+    max-width: 450px;
   }
 
   .hero-image {
@@ -173,7 +165,6 @@
   }
 }
 
-/* Phones */
 @media (max-width: 480px) {
   .container {
     padding: 15px;

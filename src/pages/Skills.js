@@ -3,7 +3,9 @@ import "./Skills.css";
 import { ImHtmlFive } from "react-icons/im";
 import { FaCss3Alt, FaReact, FaGithub, FaPython } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
-import { SiJavascript, SiTypescript } from "react-icons/si"; // Ensure SiJavascript is used correctly
+import { SiJavascript, SiTypescript } from "react-icons/si";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { FaBootstrap } from "react-icons/fa6";
 
 export default function Skills() {
   return (
@@ -14,16 +16,20 @@ export default function Skills() {
           <h2>Front-End Development</h2>
           <ul className="skills-list">
             <li>
-              <ImHtmlFive className="html-icon" /> HTML5
+              <ImHtmlFive className="html-icon" />
+              HTML5
             </li>
             <li>
-              <FaCss3Alt className="css-icon" /> CSS3
+              <FaCss3Alt className="css-icon" />
+              CSS3
             </li>
             <li>
-              <SiJavascript className="js-icon" /> JavaScript (ES6+)
+              <SiJavascript className="js-icon" />
+              JavaScript (ES6+)
             </li>
             <li>
-              <FaReact className="react-icon" /> React
+              <FaReact className="react-icon" />
+              React
             </li>
           </ul>
         </div>
@@ -32,10 +38,12 @@ export default function Skills() {
           <h2>Styling & UI Frameworks</h2>
           <ul className="skills-list">
             <li>
-              <FaCss3Alt className="css-icon" /> Tailwind CSS
+              <RiTailwindCssFill className="tailwind-icon" />
+              Tailwind CSS
             </li>
             <li>
-              <FaReact className="react-icon" /> Bootstrap
+              <FaBootstrap className="bootstrap-icon" />
+              Bootstrap
             </li>
           </ul>
         </div>
@@ -44,10 +52,12 @@ export default function Skills() {
           <h2>Version Control & Tools</h2>
           <ul className="skills-list">
             <li>
-              <FaGithub className="github-icon" /> GitHub
+              <FaGithub className="github-icon" />
+              GitHub
             </li>
             <li>
-              <VscVscode className="vscode-icon" /> VS Code
+              <VscVscode className="vscode-icon" />
+              VS Code
             </li>
           </ul>
         </div>
@@ -56,10 +66,12 @@ export default function Skills() {
           <h2>Learning & Growth</h2>
           <ul className="skills-list">
             <li>
-              <FaPython className="python-icon" /> Python
+              <FaPython className="python-icon" />
+              Python
             </li>
             <li>
-              <SiTypescript className="ts-icon" /> TypeScript
+              <SiTypescript className="ts-icon" />
+              TypeScript
             </li>
             <li>AI Prompt Engineering</li>
           </ul>

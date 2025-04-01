@@ -3,7 +3,7 @@ import "./Home.css";
 import { FaArrowRight } from "react-icons/fa";
 
 export default function Home({ scrollToSection }) {
-  // Accept prop
+ 
   return (
     <div className="home-container">
       <section className="hero">

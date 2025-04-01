@@ -8,14 +8,14 @@
 h1 {
   font-size: clamp(2rem, 7vw, 4rem);
   margin-bottom: 2rem;
-  color: #333;
+  color: #ffffff;
   animation: fadeIn 1s ease-out;
 }
 
 p {
-  font-size: clamp(1rem, 2.5vw, 1.8rem);
+  font-size: clamp(1rem, 2.5vw, 1.8rem);    
   line-height: 1.8;
-  color: #555;
+  color: #ffffff;
   margin-bottom: 2rem;
   animation: fadeIn 1s ease-out 0.2s backwards;
   max-width: 900px;

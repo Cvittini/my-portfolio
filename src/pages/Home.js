@@ -17,11 +17,9 @@ export default function Home({ scrollToSection }) {
           <h1 className="hero-title">
             Cristian <span className="highlight">Vittini</span>
           </h1>
-          <h2 className="hero-subtitle">Front-End Developer</h2>
+          <h2 className="hero-subtitle">Developer <br></br>&<br></br> Automation enthusiast</h2>
           <p className="hero-text">
-            I build clean, responsive web applications with HTML, CSS,
-            JavaScript, and React. From trucking to tech, I bring a no-excuses
-            approach to coding—delivering functional, precise solutions fast.
+           "From web apps to automation systems — I bring technical ideas to life."
           </p>
           <div className="cta-container">
             <button

@@ -177,7 +177,7 @@ textarea:focus {
   }
 
   textarea {
-    rows: 4;
+    grid-row: 4;
   }
 
   .submit-button {
